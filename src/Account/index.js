@@ -21,12 +21,13 @@ class Account extends Component {
       this.setState({balance: currentInput})
     }
   }
+  
 
 
   render() {
     console.log(this.myRef, "This is myRef")
     console.log(this.myRef.value)
- 
+  
     return (
       <div className="account">
         <h2>{this.props.name}</h2>
