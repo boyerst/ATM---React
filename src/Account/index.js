@@ -14,19 +14,26 @@ class Account extends Component {
   handleClick = (event) => {
     console.log(event.target.value, "This is event.target.value")
     console.log(event.target, "This is event.target")
+    
 
     const currentInput = this.myRef.current.value
     console.log(currentInput)
+
+
     if(event.target.value === 'Deposit'){
       this.setState({balance: currentInput})
+    } else if(this.state.balance >= currentInput) {
+      this.setState({balance: this.state.balance - currentInput})
     }
   }
+
+
   
 
 
   render() {
     console.log(this.myRef, "This is myRef")
-    console.log(this.myRef.value)
+    console.log(this.balance)
   
     return (
       <div className="account">
@@ -41,6 +48,8 @@ class Account extends Component {
     )
   }
 }
+
+
 
 export default Account;
 
