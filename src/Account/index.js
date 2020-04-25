@@ -11,18 +11,17 @@ class Account extends Component {
     this.myRef = React.createRef() //the receives the underlying DOM element as its current property
   }
 
+
+
   handleClick = (event) => {
     const currentInput = this.myRef.current.value
-    console.log(currentInput)
-
-
+    const newBalance = Number(currentInput)
     if(event.target.value === 'Deposit'){
-      this.setState({balance: currentInput})
+      this.setState({balance: newBalance + this.state.balance})
     } else if (this.state.balance >= currentInput) {
-      this.setState({balance: this.state.balance - currentInput})
+      this.setState({balance: this.state.balance - newBalance})
     }
   }
-
 
   
 
